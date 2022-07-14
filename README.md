@@ -12,4 +12,5 @@
 
 - 准备python3环境
 - 启用项目虚拟环境 `source ./venv/bin/activate`
+- git checkout -b ai-teller-dev
 - 开始开发
