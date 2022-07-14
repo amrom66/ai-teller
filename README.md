@@ -11,6 +11,8 @@
 ## 开发教程
 
 - 准备python3环境
+- cd ~  && mkdir code && cd code
+- `git clone git@github.com:linjinbao666/ai-teller.git`
 - 启用项目虚拟环境 `source ./venv/bin/activate`
 - git checkout -b dev
 - 开始开发
