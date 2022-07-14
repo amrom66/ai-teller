@@ -21,7 +21,6 @@ def cli():
     else:
         parser.print_help()
 
-
 def handle_config(args):
     print('config will generate a default config file')
 

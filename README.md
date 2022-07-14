@@ -11,9 +11,15 @@
 ## 开发教程
 
 - 准备python3环境
-- cd ~  && mkdir code && cd code
+- cd ~ && mkdir code && cd code
 - `git clone git@github.com:linjinbao666/ai-teller.git`
 - 启用项目虚拟环境 `source ./venv/bin/activate`
 - git checkout -b dev ##dev建议换成自己唯一的分支名
 - 开始开发
 - 开发结束后使用`git push origin dev`提交代码
+
+## 使用流程
+
+- web页面 用户输入自己姓名 性别 年龄
+- 后台随机生成输出
+- 反馈到页面
