@@ -16,3 +16,4 @@
 - 启用项目虚拟环境 `source ./venv/bin/activate`
 - git checkout -b dev
 - 开始开发
+- 开发结束后使用`git push origin dev`提交代码
