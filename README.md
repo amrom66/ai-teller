@@ -30,6 +30,10 @@
 - 开始开发
 - 开发结束后使用`git push origin dev`提交代码
 
+## CLI使用
+
+- `python main.py server`启动web服务器
+
 ## 使用流程
 
 - web页面 用户输入自己姓名 性别 年龄
