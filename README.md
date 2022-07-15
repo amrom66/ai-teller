@@ -26,7 +26,7 @@
 - cd ~ && mkdir code && cd code
 - `git clone git@github.com:linjinbao666/ai-teller.git`
 - 启用项目虚拟环境 `source ./venv/bin/activate`
-- git checkout -b dev ##dev建议换成自己唯一的分支名
+- git checkout -b dev-${RANDOM} ##dev-${RANDOM}建议换成自己唯一的分支名
 - 开始开发
 - 开发结束后使用`git push origin dev`提交代码
 
