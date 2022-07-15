@@ -26,9 +26,15 @@
 - cd ~ && mkdir code && cd code
 - `git clone git@github.com:linjinbao666/ai-teller.git`
 - 启用项目虚拟环境 `source ./venv/bin/activate`
-- git checkout -b dev-${RANDOM} ##dev-${RANDOM}建议换成自己唯一的分支名
+- export mybranch=dev-${RANDOM}
+- git checkout -b ${mybranch}
 - 开始开发
-- 开发结束后使用`git push origin dev`提交代码
+- 开发结束后使用`git push origin ${mybranch}`提交代码
+
+### 注意事项
+
+由于`main`分支和`dev`分支设置为保护分支，所以需要各自推送到各自的分支，然后通过pr合并到`dev`主分支。
+`${mybranch}` 此处表示随机出来的一个名字，建议换成自己唯一的分支名
 
 ## 使用流程
 
