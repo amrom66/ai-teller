@@ -1,6 +1,7 @@
 import argparse
 from ast import arg
 import util.host
+import web.home
 
 def cli():
     parser = argparse.ArgumentParser(description='ai-teller is a program to tell you your future')
@@ -12,7 +13,7 @@ def cli():
 
     # server command and its arguments
     server_command = subparsers.add_parser("server", help="启动服务器")
-    server_command.add_argument('-p', '--port', type=int, default=9870, required=True, help='端口')
+    server_command.add_argument('-p', '--port', type=int, default=9870, required=False, help='端口')
     server_command.set_defaults(handle=handle_server)
 
     migrate_command= subparsers.add_parser("migrate",help="迁移数据")
@@ -37,6 +38,6 @@ def handle_server(args):
     ip = util.host.get_host_ip()
     print('server will listen on ip:', ip)
     print('server will listen on port:', args.port)
-
+    web.home.app.run(host=ip, port=args.port)
 if __name__ == '__main__':
     cli()
