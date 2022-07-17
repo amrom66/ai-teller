@@ -3,6 +3,9 @@ import numpy as np
 from datetime import datetime
 
 def video():
+    """
+    video is used to open a camera window and capture frames
+    """
     capture = cv2.VideoCapture(0)
     while(True):
         ret, frame = capture.read()
