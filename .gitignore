@@ -2,3 +2,5 @@ venv
 build
 dist
 main.spec
+util/__pycache__/
+web/__pycache__/
