@@ -21,6 +21,7 @@ def cli():
     opencv_command = subparsers.add_parser("opencv", help="启动opencv")
     opencv_command.set_defaults(handle=handle_opencv)
 
+    # migrate commnd and its arguments
     migrate_command= subparsers.add_parser("migrate",help="迁移数据")
     migrate_command.add_argument('-src', '--source', type= str,default='ikk', required= True, help ='数据源')
     migrate_command.add_argument('-dst', '--destination', type= str, default= 'fgh', required= True, help = '目的端')
