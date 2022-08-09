@@ -1,7 +1,7 @@
 import argparse
 from ast import arg
 import util.host
-import web.home
+import web.web
 import util.camera
 
 def cli():
@@ -42,9 +42,7 @@ def handle_config(args):
 def handle_server(args):
     print('server will start a server')
     ip = util.host.get_host_ip()
-    print('server will listen on ip:', ip)
-    print('server will listen on port:', args.port)
-    web.home.app.run(host=ip, port=args.port)
+    web.web.app.run(host=ip, port=args.port)
 
 def handle_opencv(args):
     print('opencv will open your camera')

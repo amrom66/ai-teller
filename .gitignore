@@ -1,6 +1,7 @@
 venv
 build
 dist
+target
 main.spec
 util/__pycache__/
 web/__pycache__/
