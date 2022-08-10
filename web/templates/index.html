@@ -4,12 +4,15 @@
 	<meta charset="utf-8">
 	<title>AI算命</title>
 	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.datetimepicker.min.css') }}">
 	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='jquery.datetimepicker.full.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='distpicker.min.js') }}"></script>
 
   <style type="text/css">
 
-    body{   
+    body{
       margin: 0;
       padding: 0;
     }
@@ -80,9 +83,13 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="age" class="col-sm-2 control-label">家庭</label>
+              <label for="age" class="col-sm-2 control-label">住址</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="age" placeholder="18">
+                <div data-toggle="distpicker">
+                  <select class="form-control"></select>
+                  <select class="form-control"></select>
+                  <select class="form-control"></select>
+                </div>
               </div>
             </div>
             <div class="form-group">
@@ -134,6 +141,17 @@
   </div>
 </div>
 
+
+<script>
+  $('#birth').datetimepicker({
+    timepicker:false,
+    format:'Y-m-d'
+  });
+  $.datetimepicker.setLocale('zh');
+
+  $('#distpicker').distpicker();
+
+</script>
 
 </body>
 </html>
