@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AI算命</title>
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='jquery.datetimepicker.min.css') }}">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='jquery.datetimepicker.full.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='distpicker.min.js') }}"></script>
+
+  <style type="text/css">
+
+    body{
+      margin: 0;
+      padding: 0;
+    }
+
+    .panel-body{
+      height: 400px;
+    }
+
+    .form-control{
+      width: 85%;
+    }
+
+  </style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-default" role="navigation" style="text-align: center;">
+	<div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">AI-TELLER</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav row" style="display: inline-block;float: none;">
+                <li class="active col-md-3"><a href="#">离线算命</a></li>
+                <li class="col-md-3"><a href="#">人脸算命</a></li>
+                <li class="col-md-3"><a href="#">视频算命</a></li>
+                <li class="col-md-3"><a href="#">前途预测</a></li>
+            </ul>
+        </div>
+	</div>
+</nav>
+
+<div class="container-fluid row">
+  <div class="panel panel-primary col-md-6" style="padding:0px;">
+    <div class="panel-heading">
+      <h3 class="panel-title">基本信息</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+              <label for="name" class="col-sm-2 control-label">姓名</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="name" placeholder="姓名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="age" class="col-sm-2 control-label">年龄</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="age" placeholder="18">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="sex" class="col-sm-2 control-label">性别</label>
+              <div class="col-sm-10">
+                <label class="radio-inline">
+                  <input type="radio" name="sex" id="inlineRadio1" value="0"> 男
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="sex" id="inlineRadio2" value="1"> 女
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="birth" class="col-sm-2 control-label">生辰</label>
+              <div class="col-sm-10">
+                <input type="datetime" class="form-control" id="birth" placeholder="">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="age" class="col-sm-2 control-label">住址</label>
+              <div class="col-sm-10">
+                <div data-toggle="distpicker">
+                  <select class="form-control"></select>
+                  <select class="form-control"></select>
+                  <select class="form-control"></select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">开始算命</button>
+              </div>
+            </div>
+        </form>
+    </div>
+  </div>
+  <div class="panel panel-success col-md-6">
+    <div class="panel-heading">
+      <h3 class="panel-title">算命结果</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+              <label for="name" class="col-sm-2 control-label">姓名</label>
+              <div class="col-sm-10">
+                <p class="form-control-static">菜鸡聪</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="age" class="col-sm-2 control-label">年龄</label>
+              <div class="col-sm-10">
+                <p class="form-control-static">18</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="age" class="col-sm-2 control-label">生日</label>
+              <div class="col-sm-10">
+                <p class="form-control-static">10月20日</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="age" class="col-sm-2 control-label">星座</label>
+              <div class="col-sm-10">
+                <p class="form-control-static">金牛座</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="age" class="col-sm-2 control-label">寿命</label>
+              <div class="col-sm-10">
+                <p class="form-control-static">99</p>
+              </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $('#birth').datetimepicker({
+    timepicker:false,
+    format:'Y-m-d'
+  });
+  $.datetimepicker.setLocale('zh');
+
+  $('#distpicker').distpicker();
+
+</script>
+
+</body>
+</html>

@@ -1,7 +1,7 @@
 import argparse
 from ast import arg
 import util.host
-import web.home
+import web.web
 import util.camera
 
 def cli():
@@ -21,6 +21,7 @@ def cli():
     opencv_command = subparsers.add_parser("opencv", help="启动opencv")
     opencv_command.set_defaults(handle=handle_opencv)
 
+    # migrate commnd and its arguments
     migrate_command= subparsers.add_parser("migrate",help="迁移数据")
     migrate_command.add_argument('-src', '--source', type= str,default='ikk', required= True, help ='数据源')
     migrate_command.add_argument('-dst', '--destination', type= str, default= 'fgh', required= True, help = '目的端')
@@ -41,9 +42,7 @@ def handle_config(args):
 def handle_server(args):
     print('server will start a server')
     ip = util.host.get_host_ip()
-    print('server will listen on ip:', ip)
-    print('server will listen on port:', args.port)
-    web.home.app.run(host=ip, port=args.port)
+    web.web.app.run(host=ip, port=args.port)
 
 def handle_opencv(args):
     print('opencv will open your camera')
