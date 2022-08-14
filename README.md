@@ -24,8 +24,9 @@
 
 - 准备python3环境
 - cd ~ && mkdir code && cd code
-- `git clone git@github.com:linjinbao666/ai-teller.git`
-- 启用项目虚拟环境 `source ./venv/bin/activate`
+- `git clone git@github.com:amrom66/ai-teller.git`
+- python3 -m venv .venv
+- 启用项目虚拟环境 `source .venv/bin/activate`
 - export mybranch=dev-${RANDOM}
 - git checkout -b ${mybranch}
 - 开始开发
