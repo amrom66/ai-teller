@@ -46,7 +46,7 @@ def handle_server(args):
 
 def handle_opencv(args):
     print('opencv will open your camera')
-    util.camera.video()
+    util.camera.capture_one()
 
 if __name__ == '__main__':
     cli()
